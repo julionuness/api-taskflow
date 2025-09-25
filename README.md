@@ -73,7 +73,7 @@ Este repositório contém o **backend** da aplicação TaskFlow, construído com
 
 ```bash
 # 1. Clone o repositório
-git clone <url-do-repositório>
+git clone https://github.com/julionuness/api-taskflow
 cd taskflow_backend
 
 # 2. Instale as dependências
