@@ -82,8 +82,19 @@ const getUserById = async (id) => {
   }
 };
 
+const getUserByEmail = async (email) => {
+  try {
+    const user = await userRepository.findByEmail(email);
+    return user ? user.toJSON() : null;
+  } catch (error) {
+    console.error('Get user by email service error:', error);
+    throw error;
+  }
+};
+
 module.exports = {
   register,
   login,
-  getUserById
+  getUserById,
+  getUserByEmail
 };

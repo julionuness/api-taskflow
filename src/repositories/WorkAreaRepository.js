@@ -90,7 +90,7 @@ class WorkAreaRepository {
 
   async delete(id) {
     try {
-      const query = 'DELETE FROM work area WHERE id = $1 RETURNING *';
+      const query = 'DELETE FROM work_area WHERE id = $1 RETURNING *';
       const result = await pool.query(query, [id]);
 
       return result.rows.length > 0;

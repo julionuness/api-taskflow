@@ -52,8 +52,38 @@ const getProfile = async (req, res) => {
   }
 };
 
+const getUserByEmail = async (req, res) => {
+  try {
+    const { email } = req.query;
+    if (!email) {
+      return res.status(HTTP_STATUS.BAD_REQUEST).json({
+        error: 'Email é obrigatório'
+      });
+    }
+
+    const user = await authService.getUserByEmail(email);
+    if (!user) {
+      return res.status(HTTP_STATUS.NOT_FOUND).json({
+        error: 'Usuário não encontrado'
+      });
+    }
+
+    // Retornar apenas dados públicos
+    res.status(HTTP_STATUS.OK).json({
+      id: user.id,
+      name: user.name,
+      email: user.email
+    });
+  } catch (error) {
+    res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+      error: error.message
+    });
+  }
+};
+
 module.exports = {
   register,
   login,
-  getProfile
+  getProfile,
+  getUserByEmail
 };

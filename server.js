@@ -5,8 +5,13 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 
 const authRoutes = require('./src/routes/authRoutes');
+const workAreaRoutes = require('./src/routes/workAreaRoutes');
+const kanbanRoutes = require('./src/routes/kanbanRoutes');
+const notificationRoutes = require('./src/routes/notificationRoutes');
+const activityLogRoutes = require('./src/routes/activityLogRoutes');
 const errorHandler = require('./src/middleware/errorHandler');
 const pool = require('./src/config/database');
+const { notificationCronJob } = require('./src/jobs/notificationCron');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,6 +27,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', authRoutes);
+app.use('/workareas', workAreaRoutes);
+app.use('/kanban', kanbanRoutes);
+app.use('/notifications', notificationRoutes);
+app.use('/activity', activityLogRoutes);
 
 app.use(errorHandler);
 
@@ -36,4 +45,5 @@ pool.query('SELECT NOW()', (err, result) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`📅 Notification cron job is active (runs daily at 9:00 AM)`);
 });
