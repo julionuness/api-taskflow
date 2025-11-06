@@ -30,9 +30,6 @@
 - [🔧 Configuração](#-configuração)
 - [🌐 Estrutura de Endpoints](#-estrutura-de-endpoints)
 - [✨ Features Implementadas](#-features-implementadas)
-- [🚧 Roadmap](#-roadmap)
-- [🤝 Contribuindo](#-contribuindo)
-- [📄 Licença](#-licença)
 
 ---
 
@@ -342,39 +339,6 @@ GET    /entity/:entityType/:entityId  - Histórico de entidade
 - ✅ Error handling centralizado
 - ✅ Arquitetura em camadas bem definida
 
-## 🚧 Roadmap
-
-Funcionalidades planejadas para futuras versões:
-
-- 🔜 WebSocket para atualizações em tempo real
-- 🔜 Sistema de comentários em cards
-- 🔜 Upload de anexos/arquivos
-- 🔜 Filtros avançados e busca
-- 🔜 Dashboard com gráficos e analytics
-- 🔜 Templates de boards
-- 🔜 Integração com calendário
-- 🔜 Exportação de dados (CSV, PDF)
-- 🔜 API de webhooks
-- 🔜 Testes automatizados (Jest)
-- 🔜 Docker e CI/CD
-
----
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Para contribuir:
-
-1. Faça um Fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
